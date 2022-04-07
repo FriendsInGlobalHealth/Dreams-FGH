@@ -491,7 +491,11 @@ class AgywPrev extends Model {
                         else 0
                     end) contracepcao,
                     sum(case
-                        when sub_servico_id in (201,202,203,204,205,206,210,211,212,216) then 1
+                        when sub_servico_id in (216) then 1
+                        else 0
+                    end) sessoes_hiv_vbg_prep,
+                    sum(case
+                        when sub_servico_id in (201,202,203,204,205,206,210,211,212) then 1
                         else 0
                     end) sessoes_hiv_vbg,
                     sum(case
