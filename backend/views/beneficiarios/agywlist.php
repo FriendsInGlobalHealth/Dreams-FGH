@@ -24,7 +24,7 @@ use app\models\Organizacoes;
 $this->params['breadcrumbs'][] = $this->title;
 
 $indicatorID = $_GET['iID'];
-$enrollmentTime = str_replace('_', '-',$_GET['eTime']).' meses';
+$enrollmentTime = isset($_GET['eTime'])? str_replace('_', '-',$_GET['eTime']).' meses': "Todos";
 $ageBand = isset($_GET['aBand'])? str_replace('_', '-',$_GET['aBand']).' anos': "Todas";
 
 switch($indicatorID){

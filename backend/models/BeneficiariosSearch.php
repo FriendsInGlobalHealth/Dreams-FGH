@@ -62,6 +62,7 @@ class BeneficiariosSearch extends Beneficiarios
                                 if(idade_actual < 18 and sexualmente_activa=1,1,0) +
                                 if(relacoes_multiplas_cocorrentes=1,1,0) +
                                 if(vitima_vbg=1,1,0) +
+                                if(idade_actual < 18 and trabalha<>0,1,0) +
                                 if(idade_actual > 17 and trabalhadora_sexo=1,1,0) +
                                 if(abuso_alcool_drogas=1,1,0) +
                                 if(historico_its=1,1,0) as vulnerabilidades,

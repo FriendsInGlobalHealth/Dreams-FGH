@@ -123,7 +123,7 @@ Yii::$app->user->identity->role==20 ?  " | ".$model->beneficiario['emp_firstname
                             </td>
                 <?php if(Yii::$app->user->identity->id==$model->criado_por) {} else{?>
                             <td>
-                              <a href="<?= Url::toRoute('servicos-beneficiados/create.dreams?ts=1&m='.$model->beneficiario_id.'&atender='.sha1(1).'&rfid='.$model->id); ?>">  <i class="fa fa-edit" style="color:#faa001;" aria-hidden="true"></i>
+                              <a href="<?= Url::toRoute('servicos-beneficiados/create.dreams?ts='.$model->servico_id.'&m='.$model->beneficiario_id.'&atender='.sha1(1).'&sid='.$serv->servico_id.'&rfid='.$model->id); ?>">  <i class="fa fa-edit" style="color:#faa001;" aria-hidden="true"></i>
                               </a>
                             </td>
                 <?php } ?>

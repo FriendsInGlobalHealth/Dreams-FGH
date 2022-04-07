@@ -111,7 +111,7 @@ class ReferenciasDreamsSearch extends ReferenciasDreams
 	        'status_ref' => $this->status_ref,
             'criado_por' => $this->criado_por,
             'actualizado_por' => $this->actualizado_por,
-            'criado_em' => $this->criado_em,
+            //'criado_em' => $this->criado_em,
 	        'refer_to'=>$this->refer_to,
             'actualizado_em' => $this->actualizado_em,
         ]);
@@ -123,6 +123,7 @@ class ReferenciasDreamsSearch extends ReferenciasDreams
             ->andFilterWhere(['like', 'description', $this->description])
             ->andFilterWhere(['like', 'user_location', $this->user_location])
 	        ->andFilterWhere(['like', 'refer_to', $this->refer_to])
+            ->andFilterWhere(['like', 'DATE(app_dream_referencias.criado_em)', $this->criado_em])
             ->andFilterWhere(['like', 'user_location2', $this->user_location2]);
 
         return $dataProvider;

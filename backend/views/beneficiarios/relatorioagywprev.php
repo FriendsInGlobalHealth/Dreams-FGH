@@ -111,7 +111,24 @@ $i=0;
                                         </tr>
 
                                         <tr>
-                                            <td width="706" colspan="6" bgcolor="#F4A460"><b>Beneficiaries that have fully completed the DREAMS primary package of services/interventions but no additional services/interventions</b> </td>
+                                            <td width="706" colspan="7" bgcolor="#F4A460"><b>Beneficiaries that have fully completed the DREAMS primary package of services/interventions but no additional services/interventions: 
+                                            <?php if(($firstdesagregationResults['9-14']['0_6'] + $firstdesagregationResults['15-19']['0_6'] + $firstdesagregationResults['20-24']['0_6'] + $firstdesagregationResults['25-29']['0_6'] +
+                                                        $firstdesagregationResults['9-14']['7_12'] + $firstdesagregationResults['15-19']['7_12'] + $firstdesagregationResults['20-24']['7_12'] + $firstdesagregationResults['25-29']['7_12'] +
+                                                        $firstdesagregationResults['9-14']['13_24'] + $firstdesagregationResults['15-19']['13_24'] + $firstdesagregationResults['20-24']['13_24'] + $firstdesagregationResults['25-29']['13_24'] +
+                                                        $firstdesagregationResults['9-14']['25+'] + $firstdesagregationResults['15-19']['25+'] + $firstdesagregationResults['20-24']['25+'] + $firstdesagregationResults['25-29']['25+']) > 0) { ?>
+                                                <?= Html::a('<span style="color:#0549a3;"> '.($firstdesagregationResults['9-14']['0_6'] + $firstdesagregationResults['15-19']['0_6'] + $firstdesagregationResults['20-24']['0_6'] + $firstdesagregationResults['25-29']['0_6'] +
+                                                                                            $firstdesagregationResults['9-14']['7_12'] + $firstdesagregationResults['15-19']['7_12'] + $firstdesagregationResults['20-24']['7_12'] + $firstdesagregationResults['25-29']['7_12'] +
+                                                                                            $firstdesagregationResults['9-14']['13_24'] + $firstdesagregationResults['15-19']['13_24'] + $firstdesagregationResults['20-24']['13_24'] + $firstdesagregationResults['25-29']['13_24'] +
+                                                                                            $firstdesagregationResults['9-14']['25+'] + $firstdesagregationResults['15-19']['25+'] + $firstdesagregationResults['20-24']['25+'] + $firstdesagregationResults['25-29']['25+']).'</span>', ['relatorioagywprev', 
+                                                                                                                                                    'pcode' => $district->province_code,
+                                                                                                                                                    'dcode' => $district->district_code,
+                                                                                                                                                    'sdate' => $model->start_date,
+                                                                                                                                                    'edate' => $model->end_date,
+                                                                                                                                                    'iID' => 1], []) ?>
+                                            <?php  } else { ?>
+                                                <span style="color:#0549a3;"> 0 </span>
+                                            <?php  } ?>
+                                            </b> </td>
                                         </tr>
                                         <tr>
                                             <td width="174" bgcolor="#FFDEAD">Tempo de registo como beneficiário DREAMS </td>
@@ -161,7 +178,24 @@ $i=0;
                                             <td colspan="6" height="40" bgcolor="#FFFFFF"><b> </b></td>
                                         </tr>
                                         <tr>
-                                            <td width="706" colspan="6" bgcolor="#F4A460"><b>Beneficiaries that have fully completed the DREAMS primary package of services/interventions AND at least one secondary service/intervention</b> </td>
+                                            <td width="706" colspan="6" bgcolor="#F4A460"><b>Beneficiaries that have fully completed the DREAMS primary package of services/interventions AND at least one secondary service/intervention: 
+                                            <?php if(($seconddesagregationResults['9-14']['0_6'] + $seconddesagregationResults['15-19']['0_6'] + $seconddesagregationResults['20-24']['0_6'] + $seconddesagregationResults['25-29']['0_6'] +
+                                                        $seconddesagregationResults['9-14']['7_12'] + $seconddesagregationResults['15-19']['7_12'] + $seconddesagregationResults['20-24']['7_12'] + $seconddesagregationResults['25-29']['7_12'] +
+                                                        $seconddesagregationResults['9-14']['13_24'] + $seconddesagregationResults['15-19']['13_24'] + $seconddesagregationResults['20-24']['13_24'] + $seconddesagregationResults['25-29']['13_24'] +
+                                                        $seconddesagregationResults['9-14']['25+'] + $seconddesagregationResults['15-19']['25+'] + $seconddesagregationResults['20-24']['25+'] + $seconddesagregationResults['25-29']['25+']) > 0) { ?>
+                                                <?= Html::a('<span style="color:#0549a3;"> '.($seconddesagregationResults['9-14']['0_6'] + $seconddesagregationResults['15-19']['0_6'] + $seconddesagregationResults['20-24']['0_6'] + $seconddesagregationResults['25-29']['0_6'] +
+                                                                                            $seconddesagregationResults['9-14']['7_12'] + $seconddesagregationResults['15-19']['7_12'] + $seconddesagregationResults['20-24']['7_12'] + $seconddesagregationResults['25-29']['7_12'] +
+                                                                                            $seconddesagregationResults['9-14']['13_24'] + $seconddesagregationResults['15-19']['13_24'] + $seconddesagregationResults['20-24']['13_24'] + $seconddesagregationResults['25-29']['13_24'] +
+                                                                                            $seconddesagregationResults['9-14']['25+'] + $seconddesagregationResults['15-19']['25+'] + $seconddesagregationResults['20-24']['25+'] + $seconddesagregationResults['25-29']['25+']).'</span>', ['relatorioagywprev', 
+                                                                                                                                                    'pcode' => $district->province_code,
+                                                                                                                                                    'dcode' => $district->district_code,
+                                                                                                                                                    'sdate' => $model->start_date,
+                                                                                                                                                    'edate' => $model->end_date,
+                                                                                                                                                    'iID' => 2], []) ?>
+                                            <?php  } else { ?>
+                                                <span style="color:#0549a3;"> 0 </span>
+                                            <?php  } ?>
+                                            </b> </td>
                                         </tr>
                                         <tr>
                                             <td width="174" bgcolor="#FFDEAD">Tempo de registo como beneficiário DREAMS </td>
@@ -211,7 +245,24 @@ $i=0;
                                             <td colspan="5" height="40" bgcolor="#FFFFFF"><b> </b></td>
                                         </tr>
                                         <tr>
-                                            <td width="706" colspan="6" bgcolor="#F4A460"><b>Beneficiaries that have completed at least one DREAMS service/intervention but not the full primary package</b> </td>
+                                            <td width="706" colspan="6" bgcolor="#F4A460"><b>Beneficiaries that have completed at least one DREAMS service/intervention but not the full primary package: 
+                                            <?php if(($thirddesagregationResults['9-14']['0_6'] + $thirddesagregationResults['15-19']['0_6'] + $thirddesagregationResults['20-24']['0_6'] + $thirddesagregationResults['25-29']['0_6'] +
+                                                        $thirddesagregationResults['9-14']['7_12'] + $thirddesagregationResults['15-19']['7_12'] + $thirddesagregationResults['20-24']['7_12'] + $thirddesagregationResults['25-29']['7_12'] +
+                                                        $thirddesagregationResults['9-14']['13_24'] + $thirddesagregationResults['15-19']['13_24'] + $thirddesagregationResults['20-24']['13_24'] + $thirddesagregationResults['25-29']['13_24'] +
+                                                        $thirddesagregationResults['9-14']['25+'] + $thirddesagregationResults['15-19']['25+'] + $thirddesagregationResults['20-24']['25+'] + $thirddesagregationResults['25-29']['25+']) > 0) { ?>
+                                                <?= Html::a('<span style="color:#0549a3;"> '.($thirddesagregationResults['9-14']['0_6'] + $thirddesagregationResults['15-19']['0_6'] + $thirddesagregationResults['20-24']['0_6'] + $thirddesagregationResults['25-29']['0_6'] +
+                                                                                            $thirddesagregationResults['9-14']['7_12'] + $thirddesagregationResults['15-19']['7_12'] + $thirddesagregationResults['20-24']['7_12'] + $thirddesagregationResults['25-29']['7_12'] +
+                                                                                            $thirddesagregationResults['9-14']['13_24'] + $thirddesagregationResults['15-19']['13_24'] + $thirddesagregationResults['20-24']['13_24'] + $thirddesagregationResults['25-29']['13_24'] +
+                                                                                            $thirddesagregationResults['9-14']['25+'] + $thirddesagregationResults['15-19']['25+'] + $thirddesagregationResults['20-24']['25+'] + $thirddesagregationResults['25-29']['25+']).'</span>', ['relatorioagywprev', 
+                                                                                                                                                    'pcode' => $district->province_code,
+                                                                                                                                                    'dcode' => $district->district_code,
+                                                                                                                                                    'sdate' => $model->start_date,
+                                                                                                                                                    'edate' => $model->end_date,
+                                                                                                                                                    'iID' => 3], []) ?>
+                                            <?php  } else { ?>
+                                                <span style="color:#0549a3;"> 0 </span>
+                                            <?php  } ?>
+                                            </b> </td>
                                         </tr>
                                         <tr>
                                             <td width="174" bgcolor="#FFDEAD">Tempo de registo como beneficiário DREAMS </td>
@@ -260,7 +311,24 @@ $i=0;
                                             <td colspan="5" height="40" bgcolor="#FFFFFF"><b> </b></td>
                                         </tr>
                                         <tr>
-                                            <td width="706" colspan="6" bgcolor="#F4A460"><b>Beneficiaries that have started a DREAMS service/intervention but have not yet completed it</b> </td>
+                                            <td width="706" colspan="6" bgcolor="#F4A460"><b>Beneficiaries that have started a DREAMS service/intervention but have not yet completed it: 
+                                            <?php if(($fourthdesagregationResults['9-14']['0_6'] + $fourthdesagregationResults['15-19']['0_6'] + $fourthdesagregationResults['20-24']['0_6'] + $fourthdesagregationResults['25-29']['0_6'] +
+                                                        $fourthdesagregationResults['9-14']['7_12'] + $fourthdesagregationResults['15-19']['7_12'] + $fourthdesagregationResults['20-24']['7_12'] + $fourthdesagregationResults['25-29']['7_12'] +
+                                                        $fourthdesagregationResults['9-14']['13_24'] + $fourthdesagregationResults['15-19']['13_24'] + $fourthdesagregationResults['20-24']['13_24'] + $fourthdesagregationResults['25-29']['13_24'] +
+                                                        $fourthdesagregationResults['9-14']['25+'] + $fourthdesagregationResults['15-19']['25+'] + $fourthdesagregationResults['20-24']['25+'] + $fourthdesagregationResults['25-29']['25+']) > 0) { ?>
+                                                <?= Html::a('<span style="color:#0549a3;"> '.($fourthdesagregationResults['9-14']['0_6'] + $fourthdesagregationResults['15-19']['0_6'] + $fourthdesagregationResults['20-24']['0_6'] + $fourthdesagregationResults['25-29']['0_6'] +
+                                                                                            $fourthdesagregationResults['9-14']['7_12'] + $fourthdesagregationResults['15-19']['7_12'] + $fourthdesagregationResults['20-24']['7_12'] + $fourthdesagregationResults['25-29']['7_12'] +
+                                                                                            $fourthdesagregationResults['9-14']['13_24'] + $fourthdesagregationResults['15-19']['13_24'] + $fourthdesagregationResults['20-24']['13_24'] + $fourthdesagregationResults['25-29']['13_24'] +
+                                                                                            $fourthdesagregationResults['9-14']['25+'] + $fourthdesagregationResults['15-19']['25+'] + $fourthdesagregationResults['20-24']['25+'] + $fourthdesagregationResults['25-29']['25+']).'</span>', ['relatorioagywprev', 
+                                                                                                                                                    'pcode' => $district->province_code,
+                                                                                                                                                    'dcode' => $district->district_code,
+                                                                                                                                                    'sdate' => $model->start_date,
+                                                                                                                                                    'edate' => $model->end_date,
+                                                                                                                                                    'iID' => 4], []) ?>
+                                            <?php  } else { ?>
+                                                <span style="color:#0549a3;"> 0 </span>
+                                            <?php  } ?>
+                                            </b> </td>
                                         </tr>
                                         <tr>
                                             <td width="174" bgcolor="#FFDEAD">Tempo de registo como beneficiário DREAMS </td>
@@ -309,7 +377,24 @@ $i=0;
                                             <td colspan="5" height="40" bgcolor="#FFFFFF"><b> </b></td>
                                         </tr>
                                         <tr>
-                                            <td width="706" colspan="6" bgcolor="#F4A460"><b>Number of AGYW enrolled in DREAMS that completed an evidence-based intervention focused on preventing violence within the reporting period</b> </td>
+                                            <td width="706" colspan="6" bgcolor="#F4A460"><b>Number of AGYW enrolled in DREAMS that completed an evidence-based intervention focused on preventing violence within the reporting period: 
+                                            <?php if(($fifthdesagregationResults['9-14']['0_6'] + $fifthdesagregationResults['15-19']['0_6'] + $fifthdesagregationResults['20-24']['0_6'] + $fifthdesagregationResults['25-29']['0_6'] +
+                                                        $fifthdesagregationResults['9-14']['7_12'] + $fifthdesagregationResults['15-19']['7_12'] + $fifthdesagregationResults['20-24']['7_12'] + $fifthdesagregationResults['25-29']['7_12'] +
+                                                        $fifthdesagregationResults['9-14']['13_24'] + $fifthdesagregationResults['15-19']['13_24'] + $fifthdesagregationResults['20-24']['13_24'] + $fifthdesagregationResults['25-29']['13_24'] +
+                                                        $fifthdesagregationResults['9-14']['25+'] + $fifthdesagregationResults['15-19']['25+'] + $fifthdesagregationResults['20-24']['25+'] + $fifthdesagregationResults['25-29']['25+']) > 0) { ?>
+                                                <?= Html::a('<span style="color:#0549a3;"> '.($fifthdesagregationResults['9-14']['0_6'] + $fifthdesagregationResults['15-19']['0_6'] + $fifthdesagregationResults['20-24']['0_6'] + $fifthdesagregationResults['25-29']['0_6'] +
+                                                                                            $fifthdesagregationResults['9-14']['7_12'] + $fifthdesagregationResults['15-19']['7_12'] + $fifthdesagregationResults['20-24']['7_12'] + $fifthdesagregationResults['25-29']['7_12'] +
+                                                                                            $fifthdesagregationResults['9-14']['13_24'] + $fifthdesagregationResults['15-19']['13_24'] + $fifthdesagregationResults['20-24']['13_24'] + $fifthdesagregationResults['25-29']['13_24'] +
+                                                                                            $fifthdesagregationResults['9-14']['25+'] + $fifthdesagregationResults['15-19']['25+'] + $fifthdesagregationResults['20-24']['25+'] + $fifthdesagregationResults['25-29']['25+']).'</span>', ['relatorioagywprev', 
+                                                                                                                                                    'pcode' => $district->province_code,
+                                                                                                                                                    'dcode' => $district->district_code,
+                                                                                                                                                    'sdate' => $model->start_date,
+                                                                                                                                                    'edate' => $model->end_date,
+                                                                                                                                                    'iID' => 5], []) ?>
+                                            <?php  } else { ?>
+                                                <span style="color:#0549a3;"> 0 </span>
+                                            <?php  } ?>
+                                            </b> </td>
                                         </tr>
                                         <tr>
                                             <td width="174" bgcolor="#FFDEAD">Tempo de registo como beneficiário DREAMS </td>
@@ -358,7 +443,24 @@ $i=0;
                                             <td colspan="5" height="40" bgcolor="#FFFFFF"><b> </b></td>
                                         </tr>
                                         <tr>
-                                            <td width="706" colspan="6" bgcolor="#F4A460"><b>Number of AGYW enrolled in DREAMS that received educational support to remain in, advance, and/or rematriculate in school within the reporting period</b> </td>
+                                            <td width="706" colspan="6" bgcolor="#F4A460"><b>Number of AGYW enrolled in DREAMS that received educational support to remain in, advance, and/or rematriculate in school within the reporting period: 
+                                            <?php if(($sixthdesagregationResults['9-14']['0_6'] + $sixthdesagregationResults['15-19']['0_6'] + $sixthdesagregationResults['20-24']['0_6'] + $sixthdesagregationResults['25-29']['0_6'] +
+                                                        $sixthdesagregationResults['9-14']['7_12'] + $sixthdesagregationResults['15-19']['7_12'] + $sixthdesagregationResults['20-24']['7_12'] + $sixthdesagregationResults['25-29']['7_12'] +
+                                                        $sixthdesagregationResults['9-14']['13_24'] + $sixthdesagregationResults['15-19']['13_24'] + $sixthdesagregationResults['20-24']['13_24'] + $sixthdesagregationResults['25-29']['13_24'] +
+                                                        $sixthdesagregationResults['9-14']['25+'] + $sixthdesagregationResults['15-19']['25+'] + $sixthdesagregationResults['20-24']['25+'] + $sixthdesagregationResults['25-29']['25+']) > 0) { ?>
+                                                <?= Html::a('<span style="color:#0549a3;"> '.($sixthdesagregationResults['9-14']['0_6'] + $sixthdesagregationResults['15-19']['0_6'] + $sixthdesagregationResults['20-24']['0_6'] + $sixthdesagregationResults['25-29']['0_6'] +
+                                                                                            $sixthdesagregationResults['9-14']['7_12'] + $sixthdesagregationResults['15-19']['7_12'] + $sixthdesagregationResults['20-24']['7_12'] + $sixthdesagregationResults['25-29']['7_12'] +
+                                                                                            $sixthdesagregationResults['9-14']['13_24'] + $sixthdesagregationResults['15-19']['13_24'] + $sixthdesagregationResults['20-24']['13_24'] + $sixthdesagregationResults['25-29']['13_24'] +
+                                                                                            $sixthdesagregationResults['9-14']['25+'] + $sixthdesagregationResults['15-19']['25+'] + $sixthdesagregationResults['20-24']['25+'] + $sixthdesagregationResults['25-29']['25+']).'</span>', ['relatorioagywprev', 
+                                                                                                                                                    'pcode' => $district->province_code,
+                                                                                                                                                    'dcode' => $district->district_code,
+                                                                                                                                                    'sdate' => $model->start_date,
+                                                                                                                                                    'edate' => $model->end_date,
+                                                                                                                                                    'iID' => 6], []) ?>
+                                            <?php  } else { ?>
+                                                <span style="color:#0549a3;"> 0 </span>
+                                            <?php  } ?>
+                                            </b> </td>
                                         </tr>
                                         <tr>
                                             <td width="174" bgcolor="#FFDEAD">Tempo de registo como beneficiário DREAMS </td>
@@ -407,7 +509,24 @@ $i=0;
                                             <td colspan="5" height="40" bgcolor="#FFFFFF"><b> </b></td>
                                         </tr>
                                         <tr>
-                                            <td width="706" colspan="6" bgcolor="#F4A460"><b>Number of AGYW ages 15-24 years enrolled in DREAMS that completed a comprehensive economic strengthening intervention within the reporting period</b> </td>
+                                            <td width="706" colspan="6" bgcolor="#F4A460"><b>Number of AGYW ages 15-24 years enrolled in DREAMS that completed a comprehensive economic strengthening intervention within the reporting period: 
+                                            <?php if(($seventhdesagregationResults['9-14']['0_6'] + $seventhdesagregationResults['15-19']['0_6'] + $seventhdesagregationResults['20-24']['0_6'] + $seventhdesagregationResults['25-29']['0_6'] +
+                                                        $seventhdesagregationResults['9-14']['7_12'] + $seventhdesagregationResults['15-19']['7_12'] + $seventhdesagregationResults['20-24']['7_12'] + $seventhdesagregationResults['25-29']['7_12'] +
+                                                        $seventhdesagregationResults['9-14']['13_24'] + $seventhdesagregationResults['15-19']['13_24'] + $seventhdesagregationResults['20-24']['13_24'] + $seventhdesagregationResults['25-29']['13_24'] +
+                                                        $seventhdesagregationResults['9-14']['25+'] + $seventhdesagregationResults['15-19']['25+'] + $seventhdesagregationResults['20-24']['25+'] + $seventhdesagregationResults['25-29']['25+']) > 0) { ?>
+                                                <?= Html::a('<span style="color:#0549a3;"> '.($seventhdesagregationResults['9-14']['0_6'] + $seventhdesagregationResults['15-19']['0_6'] + $seventhdesagregationResults['20-24']['0_6'] + $seventhdesagregationResults['25-29']['0_6'] +
+                                                                                            $seventhdesagregationResults['9-14']['7_12'] + $seventhdesagregationResults['15-19']['7_12'] + $seventhdesagregationResults['20-24']['7_12'] + $seventhdesagregationResults['25-29']['7_12'] +
+                                                                                            $seventhdesagregationResults['9-14']['13_24'] + $seventhdesagregationResults['15-19']['13_24'] + $seventhdesagregationResults['20-24']['13_24'] + $seventhdesagregationResults['25-29']['13_24'] +
+                                                                                            $seventhdesagregationResults['9-14']['25+'] + $seventhdesagregationResults['15-19']['25+'] + $seventhdesagregationResults['20-24']['25+'] + $seventhdesagregationResults['25-29']['25+']).'</span>', ['relatorioagywprev', 
+                                                                                                                                                    'pcode' => $district->province_code,
+                                                                                                                                                    'dcode' => $district->district_code,
+                                                                                                                                                    'sdate' => $model->start_date,
+                                                                                                                                                    'edate' => $model->end_date,
+                                                                                                                                                    'iID' => 7], []) ?>
+                                            <?php  } else { ?>
+                                                <span style="color:#0549a3;"> 0 </span>
+                                            <?php  } ?>
+                                            </b> </td>
                                         </tr>
                                         <tr>
                                             <td width="174" bgcolor="#FFDEAD">Tempo de registo como beneficiário DREAMS </td>

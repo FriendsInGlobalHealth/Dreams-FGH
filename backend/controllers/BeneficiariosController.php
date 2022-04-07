@@ -52,7 +52,7 @@ class BeneficiariosController extends Controller
                 ],
                 'rules' => [
                     [
-                        'actions' => ['index', 'view', 'create', 'lists','listasdistritos','listaspostos', 'listas', 'servicos', 'localidades', 'bairros', 'todos', 'filtros', 'relatorio', 'relatoriofy19', 'relatoriofy20q1', 'relatoriofy20q2', 'listdistricts'],
+                        'actions' => ['index', 'view', 'create', 'lists','listasdistritos','listaspostos', 'listas', 'servicos', 'localidades', 'bairros', 'todos', 'filtros', 'relatorio', 'relatoriofy19', 'relatoriofy20q1', 'relatoriofy20q2'],
 
                         'allow' => true,
                         'roles' => [
@@ -85,10 +85,11 @@ class BeneficiariosController extends Controller
                     ],
 
                     [
-                        'actions' => ['relatorioagyw',  'relatorioagywprev', 'exportlist', 'exportreport'],
+                        'actions' => ['relatorioagyw',  'relatorioagywprev', 'exportlist', 'exportreport', 'listdistricts'],
                         'allow' => true,
                         'roles' => [
-                            User::ROLE_ADMIN
+                            User::ROLE_ADMIN,
+                            User::ROLE_DOADOR
                         ],
                     ],
 
@@ -536,11 +537,18 @@ class BeneficiariosController extends Controller
     private function getBeneficiaries($disaggregation, $ageBand, $enrollmentTime)
     {
         $ageBands = ['9-14','15-19', '20-24', '25-29'];
+        $enrollmentTimes = ['0_6','7_12', '13_24', '25+'];
         $beneficiaries = [];
         if ($ageBand == null) {
-            foreach ($ageBands as $aBand)
-            {
-                $beneficiaries = array_merge($beneficiaries, $disaggregation[$aBand][$enrollmentTime]);
+            foreach ($ageBands as $aBand) {
+                if ($enrollmentTime == null) {
+                    foreach($enrollmentTimes as $eTime) {
+                        $beneficiaries = array_merge($beneficiaries, $disaggregation[$aBand][$eTime]);
+                    }
+                }
+                else {
+                    $beneficiaries = array_merge($beneficiaries, $disaggregation[$aBand][$enrollmentTime]);
+                }
             }
         }
         else {
@@ -882,9 +890,11 @@ class BeneficiariosController extends Controller
 
             if ($distritoId != null) {
 
-                $bairros  = Bairros::find()
+                /*$bairros  = Bairros::find()
                 ->where(['distrito_id' => $distritoId])
-                ->all();
+                ->all();*/
+
+                $bairros = ComiteLocalidades::find()->where(['c_distrito_id' => $distritoId])->all();
 
                 $map = array();
 

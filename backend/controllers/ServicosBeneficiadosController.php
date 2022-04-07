@@ -281,4 +281,5 @@ class ServicosBeneficiadosController extends Controller
         return ['output'=>'', 'selected'=>''];
 
     }
+    
 }

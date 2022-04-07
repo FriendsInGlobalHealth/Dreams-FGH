@@ -84,6 +84,9 @@
       ->orderBy('name ASC')
       ->all();
 
+    $dists=Distritos::find()->orderBy('district_name ASC')->asArray()->all();
+    $dist=ArrayHelper::getColumn($dists, 'district_code');
+
     $orgs=Organizacoes::find()->where(['=', 'status', 1])->orderBy('parceria_id ASC')->asArray()->all();
 
   }
@@ -217,7 +220,8 @@
             'attribute'=>'distrito_id',
             'format' => 'html',
             'value' => function ($model) {
-              return  $model->beneficiario->distrito['district_name'];
+              return isset($model->beneficiario)? $model->beneficiario->distrito['district_name'] : '';
+
             },
             'filter'=>ArrayHelper::map(
               $dists, 'district_code', 'district_name'
